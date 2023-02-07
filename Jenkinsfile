@@ -10,20 +10,20 @@ pipeline {
               }
             }
         
-        stage('Push docker image to dockerhub') {
-            steps {
-                script {
-                    def registry = "noabenhamo/flask-app-jenkins-pipeline-project"
+//         stage('Push docker image to dockerhub') {
+//             steps {
+//                 script {
+//                     def registry = "noabenhamo/flask-app-jenkins-pipeline-project"
                     
-                    // login to dockerhub
-                    sh "docker login -u noabenhamo -p Aa123456123456"
+//                     // login to dockerhub
+//                     sh "docker login -u noabenhamo -p Aa123456123456"
                     
-                    // push the docker image to dockerhub
-                    sh "docker push '${registry}:latest'"
-              }
-            }
+//                     // push the docker image to dockerhub
+//                     sh "docker push '${registry}:latest'"
+//               }
+//             }
         
-        }
-    }
-}
-}
+//         }
+//     }
+// }
+// }
