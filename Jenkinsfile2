@@ -15,7 +15,7 @@ pipeline {
         }
     stage('pull image and run the container') {
       steps {
-        sh 'docker run --name flaskapp2 -p 80:80 -itd noabenhamo/flask-app-jenkins-pipeline-project'
+        sh 'docker run -p 80:80 -itd noabenhamo/flask-app-jenkins-pipeline-project'
       }
     }
   }
