@@ -1,0 +1,22 @@
+pipeline {
+    agent {
+        node {
+            label 'jenkins-slave'
+        }
+   }
+  stages {
+    stage('login to docker') {
+            steps {
+                script {
+                    // login to dockerhub
+                    sh "docker login -u noabenhamo -p Aa123456123456"
+                }
+            }
+        }
+    stage('pull image and run the container') {
+      steps {
+        sh 'docker run --name flaskapp -p 80:80 -itd noabenhamo/flask-app-jenkins-pipeline-project'
+      }
+    }
+  }
+}
