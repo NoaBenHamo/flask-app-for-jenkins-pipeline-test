@@ -13,6 +13,13 @@ pipeline {
                 }
             }
         }
+    
+    stage('Clone Repository') {
+      steps {
+        git url: 'https://github.com/NoaBenHamo/flask-app-for-jenkins-pipeline-test.git', credentialsId: 'github-credentials', branch: 'master'
+      }
+    }
+    
     stage('pull image and run the container') {
       steps {
         sh 'docker run -p 80:80 -itd noabenhamo/flask-app-jenkins-pipeline-project'
@@ -20,3 +27,4 @@ pipeline {
     }
   }
 }
+
