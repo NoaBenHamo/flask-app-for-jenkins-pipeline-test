@@ -9,7 +9,7 @@ pipeline {
             steps {
                 script {
                     // login to dockerhub
-                    sh "docker login -u noabenhamo -p Aa123456123456"
+                    sh "docker login -u noabenhamo -p ${{ secrets.DOCKERHUB_PASS }}"
                 }
             }
         }
