@@ -16,7 +16,7 @@ pipeline {
                     def registry = "noabenhamo/flask-app-jenkins-pipeline-project"
                     
                     // login to dockerhub
-                    sh "docker login -u noabenhamo -p Aa123456123456"
+                    sh "docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASS }}"
                     
                     // push the docker image to dockerhub
                     sh "docker push '${registry}:latest'"
